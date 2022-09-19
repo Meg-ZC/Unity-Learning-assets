@@ -46,7 +46,6 @@ public class MainManager : MonoBehaviour
         {
             string json = File.ReadAllText(path);
             SaveData data = JsonUtility.FromJson<SaveData>(json);
-
             TeamColor = data.TeamColor;
         }
     }
