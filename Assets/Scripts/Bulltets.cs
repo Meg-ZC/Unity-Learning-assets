@@ -8,10 +8,11 @@ public class Bulltets : MonoBehaviour
 {
     private Rigidbody rb;
     public float force;
-    public Instantiator Instantiator;
+
+    private float alivetime = 0;
     void Start()
     {
-        Instantiator = GameObject.Find("Instantiator").GetComponent<Instantiator>();
+        
         rb = GetComponent<Rigidbody>();
         rb.AddForce(-transform.forward*force,ForceMode.Impulse);
     }
@@ -19,8 +20,9 @@ public class Bulltets : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y<-2)
+        if(transform.position.y<-2||alivetime > 10)
             Destroy(gameObject);
+        alivetime += Time.deltaTime;
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -29,7 +31,7 @@ public class Bulltets : MonoBehaviour
         {
             // collision.rigidbody.useGravity = false;
             Destroy(collision.gameObject);
-            Instantiator.existNum--;
+            
         }
     }
 }

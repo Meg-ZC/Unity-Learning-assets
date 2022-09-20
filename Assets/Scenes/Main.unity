@@ -175,7 +175,7 @@ MonoBehaviour:
   - {fileID: 983736901}
   - {fileID: 1765172093}
   texta: {fileID: 245768977}
-  PanSpeed: 10
+  PanSpeed: 7
   alive: 0
 --- !u!1 &109473383 stripped
 GameObject:
@@ -446,10 +446,10 @@ RectTransform:
   m_Father: {fileID: 928590844}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -170.65195, y: -117}
-  m_SizeDelta: {x: 240.6961, y: 30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 160.9, y: 37.3}
+  m_SizeDelta: {x: 240.6961, y: 28.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &245768977
 MonoBehaviour:
@@ -1873,6 +1873,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InventorySpace: 100
   HPslider: {fileID: 1392669749}
+  UserControl: {fileID: 95612407}
+  exit: {fileID: 2124815722}
 --- !u!1 &2061794945
 GameObject:
   m_ObjectHideFlags: 0
@@ -1986,9 +1988,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIMainScene, Assembly-CSharp
-        m_MethodName: Backtomenu
+      - m_Target: {fileID: 1960700500}
+        m_TargetAssemblyTypeName: Base, Assembly-CSharp
+        m_MethodName: backToMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2081,8 +2083,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sths:
   - {fileID: 3963906003845084238, guid: d08876cfaf5d02f48aae91d9bd606113, type: 3}
-  - {fileID: 8974776837463427705, guid: 2a70994ccfb8c10458381d3fb3626547, type: 3}
   - {fileID: 8814176102715218252, guid: f9fde42d0c3efb141894a7bb9e080fc6, type: 3}
+  - {fileID: 8974776837463427705, guid: 2a70994ccfb8c10458381d3fb3626547, type: 3}
   existNum: 0
 --- !u!1001 &7085127283664083167
 PrefabInstance:

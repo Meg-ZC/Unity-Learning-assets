@@ -9,7 +9,7 @@ using UnityEngine;
 public class TransporterUnit : Unit
 {
     // public int MaxAmountTransported = 1;
-    private int injure = 10;
+    private int injure = 30;
     private Building m_CurrentTransportTarget;
     // private Building.InventoryEntry m_Transporting = new Building.InventoryEntry();
     // We override the GoTo function to remove the current transport target, as any go to order will cancel the transport

@@ -8,13 +8,12 @@ public class YueBing : MonoBehaviour
     private Rigidbody objec;
     public UserControl obj;
     public float existTime = 0;
-    private Vector3 randDir;
+    public Instantiator Instantiator;
     private void Awake()
     {
         objec = GetComponent<Rigidbody>();
         obj = GameObject.Find("UserControl").GetComponent<UserControl>();
-        randDir = new Vector3(Random.Range(-180.0f, 180.0f), Random.Range(-180.0f, 180.0f),
-            Random.Range(-180.0f, 180.0f));
+        Instantiator = GameObject.Find("Instantiator").GetComponent<Instantiator>();
     }
 
     void Update()
@@ -30,8 +29,12 @@ public class YueBing : MonoBehaviour
                 objec.AddForce(Vector3.up*objec.mass*20);
             }
         }
-        if(transform.position.y<-2||existTime > 5)
+
+        if (transform.position.y < -2 || existTime > 8)
+        {
+            Instantiator.existNum--;
             Destroy(gameObject);
+        }
         //
         // transform.rotation = Quaternion.Euler(randDir);
     }
@@ -43,6 +46,7 @@ public class YueBing : MonoBehaviour
 
             obj.ShootSpeed();
             Debug.Log("Shoot speed up!");
+            Instantiator.existNum--;
             Destroy(transform.gameObject);
 
         }

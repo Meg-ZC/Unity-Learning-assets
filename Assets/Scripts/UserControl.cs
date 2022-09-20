@@ -47,15 +47,15 @@ public class UserControl : MonoBehaviour
         }
         // Marker.SetActive(false);
         unit.Add(new BuffTime(){buffAvailableToUse = false,intervalTime = 1.0f,realPassTime = 0});//固定0为shootIntervalTime，开始能发射，所以为faluse
-        unit.Add(new BuffTime(){buffAvailableToUse = false,intervalTime = 10.0f,realPassTime = 0});//固定1为panspeedUP
-        unit.Add(new BuffTime(){buffAvailableToUse = false,intervalTime = 3.0f,realPassTime = 0});//固定2为alive
-        unit.Add(new BuffTime(){buffAvailableToUse = false,intervalTime = 3.0f,realPassTime = 0});//固定3为shootSpeedUp
+        unit.Add(new BuffTime(){buffAvailableToUse = false,intervalTime = 8.0f,realPassTime = 0});//固定1为panspeedUP
+        unit.Add(new BuffTime(){buffAvailableToUse = false,intervalTime = 30.0f,realPassTime = 0});//固定2为alive，死后30s还能动
+        unit.Add(new BuffTime(){buffAvailableToUse = false,intervalTime = 8.0f,realPassTime = 0});//固定3为shootSpeedUp
         alive = true;
     }
 
     private void Update()
     {
-        if (unit[2].buffAvailableToUse != true)
+        if (unit[2].buffAvailableToUse != true&&alive)
         {
             PlayerMovement(); //获取wsad或上下左右来在xz平面运动
             CameraMovement();//鼠标移动视角和车身转向    有固定鼠标隐藏鼠标的功能
